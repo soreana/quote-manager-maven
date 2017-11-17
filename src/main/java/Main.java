@@ -16,7 +16,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.jar.JarFile;
 
 public class Main {
-    final static Logger log = Logger.getLogger(Main.class);
+    private final static Logger log = Logger.getLogger(Main.class);
 
     private static Properties prop = new Properties();
     private static ArrayList<Facade> something = new ArrayList<>();

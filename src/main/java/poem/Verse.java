@@ -1,5 +1,6 @@
 package poem;
 
+import helpers.IncludeInKeys;
 import helpers.Tag;
 import org.apache.log4j.Logger;
 
@@ -8,9 +9,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Verse {
+class Verse {
     private static Logger log = Logger.getLogger(Verse.class);
+
+    @IncludeInKeys
     private String first;
+
+    @IncludeInKeys
     private String last;
 
     private ArrayList<Tag> tags;
@@ -21,12 +26,13 @@ public class Verse {
         keySet = new HashSet<>();
         Class<Verse> verseClass = Verse.class;
         Field[] fields = verseClass.getDeclaredFields();
-        for(Field f : fields){
-            keySet.add(f.getName());
+        for (Field f : fields) {
+            if (f.isAnnotationPresent(IncludeInKeys.class))
+                keySet.add(f.getName());
         }
     }
 
-    public static Set<String> getKeySet() {
+    static Set<String> getKeySet() {
         return new HashSet<>(keySet);
     }
 }
