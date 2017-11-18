@@ -12,10 +12,10 @@ import java.util.Set;
 class Verse {
     private static Logger log = Logger.getLogger(Verse.class);
 
-    @IncludeInKeys
+    @IncludeInKeys(persinaName = "مصرع اول")
     private String first;
 
-    @IncludeInKeys
+    @IncludeInKeys(persinaName = "مصرع دوم")
     private String last;
 
     private ArrayList<Tag> tags;
@@ -24,11 +24,11 @@ class Verse {
 
     static {
         keySet = new HashSet<>();
-        Class<Verse> verseClass = Verse.class;
-        Field[] fields = verseClass.getDeclaredFields();
-        for (Field f : fields) {
-            if (f.isAnnotationPresent(IncludeInKeys.class))
-                keySet.add(f.getName());
+        for (Field f : Verse.class.getDeclaredFields()) {
+            if (f.isAnnotationPresent(IncludeInKeys.class)) {
+                keySet.add(f.getAnnotation(IncludeInKeys.class).persinaName());
+                log.info(f.getName());
+            }
         }
     }
 
