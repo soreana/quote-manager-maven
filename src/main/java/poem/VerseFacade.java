@@ -9,7 +9,7 @@ import java.util.*;
 
 public class VerseFacade implements Facade {
     @Override
-    public void addNewEntry(Map<String, String> entries, ArrayList<Tag<String>> tags) throws UnknownKeyException, MissedKeyException {
+    public void addNewEntry(Map<String, String> entries, ArrayList<Tag> tags) throws UnknownKeyException, MissedKeyException {
         Set<String> entriesKeys = entries.keySet();
         Set<String> versesKeys = entries.keySet();
 

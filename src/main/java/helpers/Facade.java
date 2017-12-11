@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Set;
 
 public interface Facade {
-    void addNewEntry(Map<String,String> entries, ArrayList<Tag<String>> tags) throws UnknownKeyException,MissedKeyException;
+    void addNewEntry(Map<String,String> entries, ArrayList<Tag> tags) throws UnknownKeyException,MissedKeyException;
     Set<String> getKeys();
     String getName();
     String getDescription();

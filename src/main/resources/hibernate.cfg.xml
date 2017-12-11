@@ -23,11 +23,10 @@
         <property name="show_sql">false</property>
         <property name="format_sql">false</property>
         <property name="use_sql_comments">false</property>
-        <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping with model class containing annotations -->
         <mapping class="poem.Verse"/>
+        <mapping class="helpers.Tag"/>
 
     </session-factory>
 </hibernate-configuration>

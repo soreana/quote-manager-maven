@@ -23,7 +23,7 @@ public class Main {
     private static Scanner console = new Scanner(System.in);
 
     private static AtomicReference<Map<String, String>> userInput = new AtomicReference<>(new HashMap<>());
-    private static AtomicReference<ArrayList<Tag<String>>> tags = new AtomicReference<>(new ArrayList<Tag<String>>());
+    private static AtomicReference<ArrayList<Tag>> tags = new AtomicReference<>(new ArrayList<Tag>());
 
     static {
         try (InputStream input = new FileInputStream("src/main/resources/conf.properties")) {
@@ -100,8 +100,8 @@ public class Main {
             System.out.println("please enter tags comma separated, e.g: tag1, tag2, tag3");
 
             for (String current : console.nextLine().replaceAll(" ", "").split(",")) {
-                if (!tags.get().contains(new Tag<>(current)))
-                    tags.get().add(new Tag<>(current));
+                if (!tags.get().contains(new Tag(current)))
+                    tags.get().add(new Tag(current));
             }
 
             System.out.println("add more tag [y/n]: ");
