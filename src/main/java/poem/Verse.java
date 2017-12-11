@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 
 import javax.persistence.*;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -20,18 +21,18 @@ public class Verse{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "catalog_pk", nullable = false, unique = true, length = 11, updatable = false)
-    public Integer ID;
+    private Integer ID;
 
     @IncludeInKeys(persinaName = "مصرع اول")
     @Column(name = "first", nullable = false, length = 400)
-    String first;
+    private String first;
 
     @IncludeInKeys(persinaName = "مصرع دوم")
     @Column(name = "last", nullable = false, length = 400)
-    String last;
+    private String last;
 
     @ManyToMany(fetch = FetchType.EAGER, mappedBy = "catalogs",cascade = CascadeType.ALL)
-    List<Tag> tags;
+    private List<Tag> tags;
 
     private static Set<String> keySet;
 
@@ -45,8 +46,24 @@ public class Verse{
         }
     }
 
+    public Verse(){
+    }
+
+    public Verse (String first , String last){
+       this.first = first;
+       this.last = last;
+       tags = new ArrayList<>();
+    }
+
     static Set<String> getKeySet() {
         return new HashSet<>(keySet);
     }
 
+    public void addTag(Tag tag){
+        tags.add(tag);
+    }
+
+    public ArrayList<Tag> getTags() {
+        return new ArrayList<>(tags);
+    }
 }
