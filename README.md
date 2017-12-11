@@ -1,0 +1,1 @@
+run this to create db : psql -U asa -d quotes -a -f tables.sql 
