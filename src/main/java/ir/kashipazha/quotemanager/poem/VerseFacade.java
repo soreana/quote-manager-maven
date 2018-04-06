@@ -1,9 +1,9 @@
-package poem;
+package ir.kashipazha.quotemanager.poem;
 
-import helpers.Facade;
-import helpers.MissedKeyException;
-import helpers.Tag;
-import helpers.UnknownKeyException;
+import ir.kashipazha.quotemanager.helpers.Facade;
+import ir.kashipazha.quotemanager.helpers.MissedKeyException;
+import ir.kashipazha.quotemanager.helpers.Tag;
+import ir.kashipazha.quotemanager.helpers.UnknownKeyException;
 
 import java.util.*;
 

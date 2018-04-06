@@ -1,7 +1,7 @@
-package poem;
+package ir.kashipazha.quotemanager.poem;
 
-import helpers.IncludeInKeys;
-import helpers.Tag;
+import ir.kashipazha.quotemanager.helpers.IncludeInKeys;
+import ir.kashipazha.quotemanager.helpers.Tag;
 import org.apache.log4j.Logger;
 
 import javax.persistence.*;

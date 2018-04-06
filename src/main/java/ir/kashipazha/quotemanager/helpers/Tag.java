@@ -1,6 +1,6 @@
-package helpers;
+package ir.kashipazha.quotemanager.helpers;
 
-import poem.Verse;
+import ir.kashipazha.quotemanager.poem.Verse;
 
 import javax.persistence.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package helpers;
+package ir.kashipazha.quotemanager.helpers;
 
 public interface PersianNumber {
     static String toPersianNumber(String arg ){

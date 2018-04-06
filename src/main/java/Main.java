@@ -1,8 +1,9 @@
-import helpers.Facade;
-import helpers.LambdaExceptionUtil;
-import helpers.MissedKeyException;
-import helpers.Tag;
+import ir.kashipazha.quotemanager.helpers.Facade;
+import ir.kashipazha.quotemanager.helpers.LambdaExceptionUtil;
+import ir.kashipazha.quotemanager.helpers.MissedKeyException;
+import org.apache.logging.log4j.LogManager;
 import org.apache.log4j.Logger;
+import ir.kashipazha.quotemanager.helpers.Tag;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,10 +45,12 @@ public class Main {
             jarFile.stream()
                     .filter(e -> e.getName().endsWith(".class"))
                     .map(e -> e.getName().substring(0, e.getName().length() - 6).replace('/', '.'))
+                    .filter(e-> e.contains("ir.kashipazha"))
                     .map(LambdaExceptionUtil.rethrowFunction(cl::loadClass))
-                    .filter(e -> !e.isInterface())
+                    .filter(e -> ! e.isInterface())
                     .filter(Facade.class::isAssignableFrom)
                     .forEach(LambdaExceptionUtil.rethrowConsumer(e -> {
+                        System.out.println(e);
                         Object obj = e.newInstance();
                         Method method = e.getMethod("getInstance");
                         Facade facade = (Facade) method.invoke(obj);

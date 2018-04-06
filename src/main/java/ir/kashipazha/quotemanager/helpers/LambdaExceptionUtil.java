@@ -1,4 +1,4 @@
-package helpers;
+package ir.kashipazha.quotemanager.helpers;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;

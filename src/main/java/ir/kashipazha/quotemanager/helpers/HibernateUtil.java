@@ -1,4 +1,4 @@
-package helpers;
+package ir.kashipazha.quotemanager.helpers;
 
 
 import org.hibernate.SessionFactory;

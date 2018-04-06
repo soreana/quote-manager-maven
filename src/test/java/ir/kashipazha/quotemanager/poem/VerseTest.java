@@ -1,7 +1,7 @@
-package poem;
+package ir.kashipazha.quotemanager.poem;
 
-import helpers.HibernateUtil;
-import helpers.Tag;
+import ir.kashipazha.quotemanager.helpers.HibernateUtil;
+import ir.kashipazha.quotemanager.helpers.Tag;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.junit.After;

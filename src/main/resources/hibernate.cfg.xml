@@ -25,8 +25,8 @@
         <property name="use_sql_comments">false</property>
 
         <!-- Mapping with model class containing annotations -->
-        <mapping class="poem.Verse"/>
-        <mapping class="helpers.Tag"/>
+        <mapping class="ir.kashipazha.quotemanager.poem.Verse"/>
+        <mapping class="ir.kashipazha.quotemanager.helpers.Tag"/>
 
     </session-factory>
 </hibernate-configuration>
