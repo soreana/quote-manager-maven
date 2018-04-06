@@ -2,7 +2,8 @@ package ir.kashipazha.quotemanager.poem;
 
 import ir.kashipazha.quotemanager.helpers.IncludeInKeys;
 import ir.kashipazha.quotemanager.helpers.Tag;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.persistence.*;
 import java.lang.reflect.Field;
@@ -16,7 +17,7 @@ import java.util.Set;
 public class Verse{
 
     @Transient
-    private static Logger log = Logger.getLogger(Verse.class);
+    private static Logger log = LogManager.getLogger(Verse.class);
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

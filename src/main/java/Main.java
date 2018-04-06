@@ -2,7 +2,7 @@ import ir.kashipazha.quotemanager.helpers.Facade;
 import ir.kashipazha.quotemanager.helpers.LambdaExceptionUtil;
 import ir.kashipazha.quotemanager.helpers.MissedKeyException;
 import org.apache.logging.log4j.LogManager;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.Logger;
 import ir.kashipazha.quotemanager.helpers.Tag;
 
 import java.io.File;
@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.jar.JarFile;
 
 public class Main {
-    private final static Logger log = Logger.getLogger(Main.class);
+    private final static Logger log = LogManager.getLogger(Main.class);
 
     private static Properties prop = new Properties();
     private static ArrayList<Facade> something = new ArrayList<>();
